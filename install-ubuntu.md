@@ -11,7 +11,7 @@ Linux distributions may not be supported.
 ## Clone this repository.
 
 ```
-git clone https://github.com/wolffg/tf-tutorial.git
+git clone https://github.com/random-forests/tensorflow-workshop.git
 cd tf-tutorial
 ```
 
