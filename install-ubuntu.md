@@ -41,7 +41,7 @@ From your "tensorflow" virtualenv prompt, run the following:
 jupyter notebook
 ```
 
-Click on `0_tf_hello_world.ipynb` to test that jupyter is running
+Click on `0_test_install.ipynb` to test that jupyter is running
 correctly.
 
 You should be able to run the notebook without issue.
