@@ -101,5 +101,4 @@ type `deactivate`.
 
 Without using Virtualenv, at this time you may run into issues with
 upgrading some pre-installed Python dependencies (especially `numpy`
-on MacOS El Capitan 10.11).  Anaconda is another solution to managing
-dependencies, but the 
+on MacOS El Capitan 10.11). You can also try Anaconda, see tensorflow.org 
