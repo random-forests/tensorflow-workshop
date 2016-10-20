@@ -71,7 +71,7 @@ this lab, we will use CPU-only Mac.
 ```
 # Within the (tensorflow) virtualenv
 pip install --upgrade protobuf
-export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.11.0-py2-none-any.whl
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.11.0rc0-py2-none-any.whl
 pip install --upgrade $TF_BINARY_URL
 pip install --upgrade jupyter
 pip install --upgrade Pillow
