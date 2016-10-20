@@ -3,7 +3,7 @@
 
 We will present the tutorial in [Jupyter](http://jupyter.org) notebooks.  To
 run them on your machine, you will need a working TensorFlow
-installation (v0.10).
+installation (v0.11).
 
 Follow these instructions, which assume you have OS X (probably 10.11
 "El Capitan"), and will use Python 2.7.
@@ -52,7 +52,7 @@ virtualenv --system-site-packages ~/tensorflow
 > Note: If you have already installed anaconda, some versions of
 > anaconda and virtualenv are not compatible.  If you have trouble,
 > such as seeing errors about "sys.prefix", you may want to try to
-> use the [TensorFlow anaconda installation instructions](https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html#anaconda-installation).
+> use the [TensorFlow anaconda installation instructions](https://www.tensorflow.org/versions/r0.11/get_started/os_setup.html#anaconda-installation).
 > You'll also need to install matplotlib and Pillow as well to get the full experience.
 
 You will need to Activate the environment, which is to say switch your
@@ -71,7 +71,7 @@ this lab, we will use CPU-only Mac.
 ```
 # Within the (tensorflow) virtualenv
 pip install --upgrade protobuf
-export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.10.0-py2-none-any.whl
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.11.0-py2-none-any.whl
 pip install --upgrade $TF_BINARY_URL
 pip install --upgrade jupyter
 pip install --upgrade Pillow
