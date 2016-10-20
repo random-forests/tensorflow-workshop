@@ -65,13 +65,13 @@ see a green light and "Docker is running".
 Go to where you cloned the repository (we're assuming `$HOME`):
 
 ```
-cd $HOME/tf-tutorial
-docker run  -v `pwd`:/tutorial -p 0.0.0.0:6006:6006 -p 0.0.0.0:8888:8888 \
-   -it tensorflow/tensorflow:0.10.0rc0 bash
+cd $HOME/tensorflow-workshop
+docker run  -v `pwd`:/workshop -p 0.0.0.0:6006:6006 -p 0.0.0.0:8888:8888 \
+   -it tensorflow/tensorflow:0.11.0rc0 bash
 ```
 
-This will start a Docker instance with the tutorial materials mounted
-at `/tutorial`.
+This will start a Docker instance with the workshop materials mounted
+at `/workshop`.
 
 *(Note: All further commands are run in the Docker
 image, so your prompt will be `root@[something]#`).*
