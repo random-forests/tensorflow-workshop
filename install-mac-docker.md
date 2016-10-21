@@ -18,7 +18,7 @@ Using git, clone this tutorial and enter that directory.
 ```
 cd $HOME
 git clone https://github.com/random-forests/tensorflow-workshop.git
-cd tf-tutorial
+cd tensorflow-workshop
 ```
 
 ## Set up Docker
