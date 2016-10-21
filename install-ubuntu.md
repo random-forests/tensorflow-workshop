@@ -12,7 +12,7 @@ Linux distributions may not be supported.
 
 ```
 git clone https://github.com/random-forests/tensorflow-workshop.git
-cd tf-tutorial
+cd tensorflow-workshop
 ```
 
 ## Install pip and dependencies
