@@ -85,7 +85,7 @@ pip install Pillow
 Once started, run the Jupyter server in the right directory.
 
 ```
-cd /tutorial
+cd /workshop
 jupyter notebook &
 ```
 
