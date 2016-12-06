@@ -3,7 +3,7 @@
 
 This tutorial is presented via [Jupyter](http://jupyter.org) notebooks.  To
 run them on your machine, you will need a working TensorFlow
-installation (v0.11+).
+installation (v0.12+).
 
 Below are instructions on how to set up a TensorFlow environment using
 Docker.  Although Docker runs in a VM, the advantage is that Docker
@@ -67,7 +67,7 @@ Go to where you cloned the repository (we're assuming `$HOME`):
 ```
 cd $HOME/tensorflow-workshop
 docker run  -v `pwd`:/workshop -p 0.0.0.0:6006:6006 -p 0.0.0.0:8888:8888 \
-   -it tensorflow/tensorflow:0.11.0 bash
+   -it tensorflow/tensorflow bash
 ```
 
 This will start a Docker instance with the workshop materials mounted
