@@ -19,6 +19,8 @@ machine.](install-ubuntu.md)
 
 If you run into trouble, our full install instructions are available on [tensorflow.org](www.tensorflow.org).
 
+Strata folks, here are the [slides](https://goo.gl/AwmsrV). Thanks again.
+
 - - -
 
 General disclaimer, this is my personal repo and not an official Google product.
