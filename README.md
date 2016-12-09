@@ -17,7 +17,7 @@ TensorFlow natively or already have Docker installed, you can try this.
  1. [Install TensorFlow directly on your Ubuntu/Linux
 machine.](install-ubuntu.md)
 
-If you run into trouble, our full install instructions are available on [tensorflow.org](www.tensorflow.org).
+If you run into trouble, our full install instructions are available on [tensorflow.org](https://www.tensorflow.org).
 
 Strata folks, here are the [slides](https://goo.gl/AwmsrV). Thanks again.
 
