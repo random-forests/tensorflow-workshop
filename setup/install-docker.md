@@ -1,7 +1,7 @@
 # Run the TensorFlow Docker image on your laptop
 
 We will present the tutorial in [Jupyter](jupyter.org) notebooks. To
-run them on your Windows machine, you will need a working TensorFlow
+run them on your laptop machine, you will need a working TensorFlow
 installation (v1.0+).
 
 Below are instructions on how to set up a TensorFlow environment using
@@ -12,7 +12,7 @@ Visit [docker.com](https://www.docker.com) to download and install Docker on you
 
 Note: the following instructions are written assuming you're using either Linux or Mac. They have not been tested for Windows. If you're using Windows, you may have to modify the syntax slightly for your terminal. For more details on the following commands, see Docker's [getting started guide](https://docs.docker.com/learn/).
 
-If you're stuck, see the Cloud-based [installation](../install-cloud.md) guide for an alternative.
+If you're stuck, see the Cloud-based [installation](install-cloud.md) guide for an alternative.
 
 ## Step 2: Download the container image
 Once Docker is installed and running on your laptop: open a terminal, and download the workshop image using this command.
