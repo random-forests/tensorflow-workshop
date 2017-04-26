@@ -76,6 +76,21 @@ pip install --upgrade jupyter
 pip install --upgrade Pillow
 ```
 
+## Installing with Anaconda
+
+If you want to use Anaconda's environment manager, `conda`, follow these steps instead:
+
+```
+conda create --name tensorflow python=2.7
+source activate tensorflow
+pip install --ignore-installed --upgrade protobuf
+pip install --ignore-installed --upgrade tensorflow
+pip install --ignore-installed --upgrade jupyter
+pip install --ignore-installed --upgrade Pillow
+pip install --ignore-installed --upgrade matplotlib
+
+```
+
 ## Running Jupyter
 
 From your "tensorflow" virtualenv prompt, run the following command:
