@@ -7,11 +7,11 @@ For this workshop, you may either install TensorFlow directly on your laptop, or
 ### Option 1: Install TensorFlow directly on your laptop
 This approach is recommended if you prefer the smallest download.
 
-1. [Install TensorFlow on Mac using a Virtual Environment.](install-mac.md) 
+1. [Install TensorFlow on Mac using a Virtual Environment.](setup/install-mac.md) 
 
-1. [Install TensorFlow on Windows.](install-win.md)
+1. [Install TensorFlow on Windows.](setup/install-win.md)
 
-1. [Install TensorFlow on Ubuntu/Linux using a Virtual Environment.](install-ubuntu.md)
+1. [Install TensorFlow on Ubuntu/Linux using a Virtual Environment.](setup/install-ubuntu.md)
 
 If you're an experienced developer, you can find a pip requirements file [here](setup/requirements.txt).
 
@@ -19,9 +19,9 @@ If you're an experienced developer, you can find a pip requirements file [here](
 
 This approach is a good option if you have difficulty installing TensorFlow directly.
 
-1. [Run the TensorFlow Docker image on your laptop](install-docker.md)
+1. [Run the TensorFlow Docker image on your laptop.](setup/install-docker.md)
 
-1. [Run the TensorFlow Docker image on a Cloud-based VM.](install-cloud.md) This is a good option if you have difficulty using Docker on your laptop.
+1. [Run the TensorFlow Docker image on a Cloud-based VM.](setup/install-cloud.md) This is a good option if you have difficulty using Docker on your laptop.
 
 ---
 If you get stuck, please refer to the full installation [instructions](https://www.tensorflow.org/install/) on tensorflow.org.
