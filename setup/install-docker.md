@@ -1,100 +1,112 @@
-update coming soon
+# Run the TensorFlow Docker image on your laptop
 
-# Installing TensorFlow on Docker on a Mac.
-
-This tutorial is presented via [Jupyter](http://jupyter.org) notebooks.  To
-run them on your machine, you will need a working TensorFlow
-installation (v0.12+).
+We will present the tutorial in [Jupyter](jupyter.org) notebooks. To
+run them on your Windows machine, you will need a working TensorFlow
+installation (v1.0+).
 
 Below are instructions on how to set up a TensorFlow environment using
-Docker.  Although Docker runs in a VM, the advantage is that Docker
-images come with all dependencies are pre-installed and pre-compiled.
+Docker. 
 
-*Note: Docker for Mac requires OS X 10.10.3 Yosemite or newer running on a 2010 or newer Mac.*
+## Step 1: Install Docker on your laptop
+Visit [docker.com](https://www.docker.com) to download and install Docker on your laptop. Docker is available for Linux, Mac, and Windows.
 
-## Clone this repository
+Note: the following instructions are written assuming you're using either Linux or Mac. They have not been tested for Windows. If you're using Windows, you may have to modify the syntax slightly for your terminal. For more details on the following commands, see Docker's [getting started guide](https://docs.docker.com/learn/).
 
-Using git, clone this tutorial and enter that directory.
+If you're stuck, see the Cloud-based [installation](../install-cloud.md) guide for an alternative.
+
+## Step 2: Download the container image
+Once Docker is installed and running on your laptop: open a terminal, and download the workshop image using this command.
 
 ```
-cd $HOME
+$ docker pull tensorflow/tensorflow
+```
+
+Note: this is a large download. Now might be a good time to get a cup of coffee. 
+
+## Step 3: Create a shared directory
+
+During the workshop, you'll want to copy data between your laptop and the running container. But, by default, the container's filesystem is isolated from your machine.
+
+So you can share data, create a directory on your laptop, and mount it as a volume when you start the container. Any data inside this folder will be accessible to both your laptop and the container. First, let's create the shared directory:
+
+```
+$ mkdir ~/workshop
+```
+
+Above, we're creating a directory called ```workshop``` inside your home folder. Feel free to use a different path.
+
+## Step 4. Clone this repository in the shared directory.
+
+Inside the shared directory you just created, use git to clone this workshop.
+
+```
+cd ~/workshop
 git clone https://github.com/random-forests/tensorflow-workshop.git
 cd tensorflow-workshop
 ```
 
-## Set up Docker
+## Step 5. Start the container
 
-Docker runs your notebooks from a virtual machine.  Docker images
-already contain installed and compiled versions of TensorFlow.
-
-Prerequisites:
-* A Mac machine (Docker will work on Windows, but the step-by-step instructions here may not work perfectly since we have not tried them)
-* Some knowledge of Python
-
-If you already have the Docker Toolbox installed, skip to
-"Installing/running a TensorFlow Docker Image." Otherwise, go to
-[https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/) and follow the
-instructions there, which should roughly be:
-
-Download Docker for Mac. 
-* On the Toolbox page, find the Stable channel.
-* Download Docker.dmg.
-* Drag the icon into your Applications folder
-* Run the Docker for Mac app.
-  * It will ask for root permissions to start with; allow it to do so.
-  * Wait until the dialog says "Docker is now up and running!".
-* Run a docker command in the terminal to confirm Docker
-installation has worked:
-```
-docker run hello-world
-```
-
-#### Installing and Running the TensorFlow Image
-
-On OS X, if you have not already, run the Docker for Mac app,
-usually placed in `/Applications/`, and which looks like this:
-
-![Docker For Mac Icon](images/docker-for-mac.png)
-
-There may be a long pause as the Docker service starts.
-
-If you click on the whale icon in your toolbar, you should eventually
-see a green light and "Docker is running".
-
-## Run Docker with Jupyter
-
-Go to where you cloned the repository (we're assuming `$HOME`):
+In this step, we'll start the container. We'll use command line arguments to mount your shared directory, and to open two ports we'll need later. Run this command:
 
 ```
-cd $HOME/tensorflow-workshop
-docker run  -v `pwd`:/workshop -p 0.0.0.0:6006:6006 -p 0.0.0.0:8888:8888 \
-   -it tensorflow/tensorflow bash
+$ docker run -it -p 8888:8888 -p 6006:6006 -v ~/workshop:/workshop tensorflow/tensorflow bash
 ```
 
-This will start a Docker instance with the workshop materials mounted
-at `/workshop`.
+Long command, right? Here's an explanation of the arguments.
 
-*(Note: All further commands are run in the Docker
-image, so your prompt will be `root@[something]#`).*
+* ```-v ~/workshop:/workshop``` mounts ```~/workshop``` on your laptop as ```/workshop``` inside the container.
 
-If you want to do the DeepDream codelab, you will also need to install Pillow within the Docker instance:
+* ```-p 8888:8888``` forwards port 8888 on your laptop to port 8888 on the container (this is so we can connect to a Jupyter notebook server running inside the container, more on that soon).
+
+* ```-p 6006:6006``` likewise forwards port 6006. We'll use this later to connect to TensorBoard.
+
+* ```-it``` attaches your terminal to the container.
+
+* ```bash``` starts bash.
+
+Note: at this point, your terminal prompt will change to resemble something like this. All further commands will be run from inside this window.
 
 ```
-pip install Pillow
+root@83bf8a86752e:/notebooks# 
 ```
 
-Once started, run the Jupyter server in the right directory.
+That means your terminal is connected to the running container. Any commands you run in this window will be run inside the container. Try ```ls``` for example.
+
+If you'd like to exit the container and return to your usual terminal, type ```exit```. (You can start the container again with the above command). 
+
+## Step 6. Install dependencies
+
+From inside the container, change into the shared folder and install dependencies by running these commands.
+```
+cd /workshop/tensorflow-workshop
+pip install -r setup/requirements.txt
+```
+
+## Step 7. Start a Jupyter Notebook server
+
+In this step, we will start an Jupyter Notebook server that runs inside the container. We will then connect to it using a web browser on your laptop.
+
+**Step 7a)** Start the notebook server.
+
+From inside the container:
 
 ```
-cd /workshop
-jupyter notebook &
+jupyter notebook --allow-root
 ```
 
+You will see output on your terminal to indicate the server is running. Later, if you want to stop the notebook server, press *Control-C*. 
 
-**On OSX:** You can navigate to:
+**Step 7b)** Copy the login token
 
-* [http://localhost:8888](http://localhost:8888)
+Notice the second from the last line contains a login token. Copy this; you will need it in a moment to connect to the server.
+
+**Step 7c)** Use a web browser to connect to the server
+
+Open a web browser on your laptop. Enter ```localhost:8888``` in the address bar to connect to the server. Paste the login token you coped in the previous step when prompted.
 
 ## When you're done
 
-To exit Docker, you can simply enter `exit` or hit `Ctrl-D`.
+To exit Docker, you can simply enter `exit` or hit `Ctrl-D`. 
+
+Note: by default, any data you create inside the Docker container will be lost when it exits. To save data, copy it to the shared directory before stopping the container.
