@@ -1,4 +1,3 @@
-
 # Install TensorFlow on Mac using a Virtual Environment
 
 We will present the tutorial in [Jupyter](http://jupyter.org) notebooks. To run them on your laptop, you will need a working TensorFlow installation (v1.0+) and several other libraries. 

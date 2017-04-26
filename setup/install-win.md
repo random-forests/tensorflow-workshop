@@ -1,4 +1,4 @@
-# Installing TensorFlow on Windows
+# Install TensorFlow on Windows
 
 We will present the tutorial in [Jupyter](jupyter.org) notebooks.  To
 run them on your Windows machine, you will need a working TensorFlow

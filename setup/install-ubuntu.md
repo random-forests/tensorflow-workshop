@@ -1,4 +1,4 @@
-# Installing TensorFlow on Ubuntu using a Virtual Environment
+# Install TensorFlow on Ubuntu using a Virtual Environment
 
 We will present the tutorial in [Jupyter](jupyter.org) notebooks.  To
 run them on your machine, you will need a working TensorFlow
