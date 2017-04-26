@@ -3,4 +3,4 @@ jupyter
 matplotlib
 pandas
 Pillow
-tensorflow
+tensorflow>=1.0
