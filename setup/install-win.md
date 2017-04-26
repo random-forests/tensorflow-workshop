@@ -42,10 +42,7 @@ From the command prompt, run the following from the `tensorflow-workshop` direct
 jupyter notebook
 ```
 
-Click on `00_test_install.ipynb` to test that jupyter is running
-correctly.
-
-You should be able to run the notebook without issue.
+Open the ```examples``` folder, and click on *00_test_install.ipynb*. You should be able to run the notebook without issue.
 
 ## Possible issues
 

@@ -105,6 +105,8 @@ Notice the second from the last line contains a login token. Copy this; you will
 
 Open a web browser on your laptop. Enter ```localhost:8888``` in the address bar to connect to the server. Paste the login token you coped in the previous step when prompted.
 
+Open the ```examples``` folder, and click on *00_test_install.ipynb*. You should be able to run the notebook without issue.
+
 ## When you're done
 
 To exit Docker, you can simply enter `exit` or hit `Ctrl-D`. 

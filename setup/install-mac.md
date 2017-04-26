@@ -75,8 +75,7 @@ From your "tensorflow" virtualenv prompt, run the following command to start a J
 (tensorflow) $ jupyter notebook
 ```
 
-Click on `00_test_install.ipynb` to test that jupyter is running
-correctly.
+Open the ```examples``` folder, and click on *00_test_install.ipynb*. You should be able to run the notebook without issue.
 
 You should be able to run the code in notebook without any import errors.
 
