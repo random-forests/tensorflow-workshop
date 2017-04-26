@@ -1,8 +1,8 @@
-# Installing TensorFlow on Ubuntu
+# Installing TensorFlow on Ubuntu using a Virtual Environment
 
 We will present the tutorial in [Jupyter](jupyter.org) notebooks.  To
 run them on your machine, you will need a working TensorFlow
-installation (v0.11+).
+installation (v1.0+).
 
 Follow these instructions, which assume you have Ubuntu Linux.  Other
 Linux distributions may not be supported.
@@ -15,25 +15,36 @@ git clone https://github.com/random-forests/tensorflow-workshop.git
 cd tensorflow-workshop
 ```
 
-## Install pip and dependencies
+## Install pip and virtualenv
 
 ```
-sudo apt-get install python-pip python-dev python-matplotlib
+sudo apt-get install python-pip python-dev python-virtualenv
 ```
 
-## Install TensorFlow
-
-This uses CPU only, and requires `pip` to be at version 8.1 or greater.
+Now, create a virtual environment.
 
 ```
-sudo pip install --upgrade tensorflow
-sudo pip install jupyter Pillow
+virtualenv --system-site-packages ~/tensorflow
 ```
 
-For GPU instructions or alternate installtion instructions (such as
-using Anaconda, or if you have an old version of pip you cannot
-upgrade), see
-[tensorflow.org](https://www.tensorflow.org/versions/r0.12/get_started/os_setup.html).
+You will need to *activate* the environment, which is to say, switch your
+Python enviroment to a fresh one with clean dependencies.
+
+```
+source ~/tensorflow/bin/activate
+```
+
+You are now running in a special Python enviroment with safe
+dependencies. Your prompt should start with `(tensorflow) $`.
+
+Run these commands to install TensorFlow, Jupyter, and other software.
+
+```
+# Within the (tensorflow) virtualenv,
+# run this command from inside the directory 
+# where you cloned this workshop
+pip install -r setup/requirements.txt
+```
 
 ## Running Jupyter
 
@@ -43,9 +54,16 @@ Run the following:
 jupyter notebook
 ```
 
-Click on `0_test_install.ipynb` to test that jupyter is running
+Click on `00_test_install.ipynb` to test that jupyter is running
 correctly.
 
 You should be able to run the notebook without issue.
 
-<hr>
+## Installation notes
+
+Virtualenv is a tidy way of managing your dependencies.  Any time
+you want to run TensorFlow, you can activate the virtual environment by `source
+~/tensorflow/bin/activate`.  To exit the virtual environment, simply
+type `deactivate`.
+
+For GPU or alternate installation instructions, see [tensorflow.org](https://www.tensorflow.org/install/).
