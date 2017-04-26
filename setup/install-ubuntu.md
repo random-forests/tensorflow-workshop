@@ -18,7 +18,7 @@ cd tensorflow-workshop
 ## Install pip and virtualenv
 
 ```
-sudo apt-get install python-pip python-dev python-virtualenv
+sudo apt-get install python-pip python-dev python-virtualenv python-tk
 ```
 
 Now, create a virtual environment.
