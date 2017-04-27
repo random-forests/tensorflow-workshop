@@ -2,7 +2,7 @@
 
 # Installation instructions
 
-For this workshop, you may either install TensorFlow directly on your laptop, or use a Docker container (running either locally, or on a Cloud-based VM). Please choose the option below that's right for you.
+For this workshop, you may either install TensorFlow directly on your laptop, or use a Docker container running either locally, or on a Cloud-based VM. Please choose the option below that's right for you.
 
 ### Option 1: Install TensorFlow directly on your laptop
 This approach is recommended if you prefer the smallest download.
