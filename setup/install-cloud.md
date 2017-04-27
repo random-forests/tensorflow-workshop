@@ -88,17 +88,17 @@ In this step, we will start an IPython Notebook server that runs inside the cont
 
 You will see output on your terminal to indicate the server is running. If you want to stop the notebook server later, press *Control-C* (but do not do this now).
 
-**Step 9a)** Copy the login token.
+**Step 8a)** Copy the login token.
 
 When the Jupyter server starts, you'll see a lot of console output. One one of the last lines, you'll see a login token. Copy this; you will need it in a moment to connect to the server.
 
-**Step 9b)** Use a web browser on your laptop to connect to the notebook server
+**Step 8b)** Use a web browser on your laptop to connect to the notebook server
 
 Open a web browser on your laptop. Use the "External IP" of your your Cloud VM from step #5 followed by :8888, i.e. ```<External_IP>:8888``` in the address bar.
 
 Paste the login token you coped in the previous step to connect to the server (if you copy/paste, make sure there is no newline splitting the token value, i.e. that you are pasting the token value printed on a single line). 
 
-**Step 9c)** Test your install
+**Step 8c)** Test your install
 
 Open the ```examples``` folder, and click on *00_test_install.ipynb*. You should be able to run the notebook without issue.
 
