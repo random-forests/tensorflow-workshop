@@ -2,7 +2,7 @@
 
 ## 1. Install Docker on your laptop
 
-Visit http://docker.com to download and install Docker on your laptop. If you'd like to learn more about Docker, see Docker's getting started guide.
+Visit https://docker.com to download and install Docker on your laptop. If you'd like to learn more about Docker, see Docker's getting started guide.
 
 ## 2. Once you have installed Docker, make a shared directory in your homedir and get the workshop code:
 
@@ -17,7 +17,7 @@ Visit http://docker.com to download and install Docker on your laptop. If you'd 
 Beware that your local path (~/tf_workshop/zurich) should start with ~ or /
 Using for example "-v ./tf_workshop:/notebooks" won't work.
  
-Open the link that looks like http://localhost:8888/?token=TOKEN in your browser
+Open the link that looks like ht&#8203;tp://localhost:8888/?token=TOKEN in your browser
 
 ## 4. Complete the pre-work notebook
 
