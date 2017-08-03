@@ -18,7 +18,11 @@ As a result we have a color generator!
 
 ![](../../images/colorbot_gif.gif)
 
-*Check how this gif was generated [here](https://github.com/mari-linhares/tensorflow-workshop/blob/master/code_samples/RNN/colorbot/gif_model.ipynb)*
+*Check how this gif was generated in [colorbot-keras.ipynb](colorbot-keras.ipynb)
+
+### Keras implementation
+
+You can check a great and simple Keras implementation of this exact same model [here](https://github.com/random-forests/tensorflow-workshop/blob/master/extras/colorbot-keras.ipynb)!
 
 ## See ColorBot in action
 
