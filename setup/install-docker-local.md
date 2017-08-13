@@ -33,7 +33,7 @@ $ mkdir ~/shared
 Run this monster command to start the container.
 
 ```
-$ docker run -it -p 8888:8888 -p 6006:6006 -v ~/shared:/shared tensorflow/tensorflow:1.3.0-rc2 bash
+$ docker run -it -p 8888:8888 -p 6006:6006 -v ~/shared:/shared tensorflow/tensorflow:1.3.0-rc2-devel bash
 ```
 
 Long command, right? Here's what the arguments do:
