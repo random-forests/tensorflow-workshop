@@ -13,7 +13,6 @@ from matplotlib import pyplot as plt
 import pandas as pd
 import tensorflow as tf
 from tensorflow.contrib.learn.python.learn import learn_runner
-from tensorflow.contrib.learn.python.learn.estimators import rnn_common
 from tensorflow.python.estimator import model_fn as model_fn_lib
 
 
@@ -188,8 +187,7 @@ def get_model_fn(rnn_cell_sizes,
                                              dtype=tf.float32)
 
     # Slice to keep only the last cell of the RNN
-    last_activations = rnn_common.select_last_activations(outputs,
-                                                          sequence_length)
+    last_activations = final_state[-1].h
 
     # ------------ Dense layers -------------------
     # Construct dense layers on top of the last cell of the RNN

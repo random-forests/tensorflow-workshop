@@ -1,5 +1,5 @@
-# Run the TensorFlow Docker image on a Cloud-based VM
-These instructions will show you how to start a Google Compute Engine (GCE) VM with Docker installed, and how to run a TensorFlow container there. This is a good option if you have difficulty installing TensorFlow on your laptop, or if you prefer to work in the Cloud. 
+# How-to the TensorFlow Docker image on a Cloud-based VM
+*These instructions will walk you through starting a Google Compute Engine (GCE) VM with Docker installed, and starting the TensorFlow container there. This is a good option if you have difficulty installing TensorFlow on your laptop, or if you prefer to work in the Cloud.*
 
 <a name="create"></a>
 ## Initial setup
@@ -7,8 +7,6 @@ These instructions will show you how to start a Google Compute Engine (GCE) VM w
 ### 1. Create a Google Cloud Platform account
 
 Sign up for a [free trial](https://cloud.google.com/free-trial/) of Google Cloud Platform (GCP). You will need a credit card to sign up, and you will receive $300 of free credits. Note: at the time of writing, you will not be billed unless you decide to renew after the trial ends. 
-
-**Note:** The author of this workshop is not interested in selling you Cloud services. GCP is pretty cool, but if you prefer, of course feel free to to use an alternative provider. The following instructions are written assuming you are using Google Cloud.
 
 #### 1.1 Enable the necessary APIs
 
@@ -64,7 +62,7 @@ gcloud compute firewall-rules create workshop --allow tcp:8888,tcp:6006
 In the SSH browser window that's connected to the GCE instance, run this command to download and run the container:
 
 ```shell
-$ docker run -it -p 8888:8888 -p 6006:6006 tensorflow/tensorflow bash
+$ docker run -it -p 8888:8888 -p 6006:6006 tensorflow/tensorflow:1.3.0-rc2 bash
 ```
 
 When this command completes, the terminal in your SSH browser window will be connected to the running container.

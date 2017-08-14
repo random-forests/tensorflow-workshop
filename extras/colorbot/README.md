@@ -3,8 +3,8 @@
 **Special thanks to [@andrewortman](https://github.com/andrewortman/colorbot/)
 that has a repo with a great implementation of colorbot using TensorFlow,
 and [@JanelleCShane](http://lewisandquark.tumblr.com/post/160776374467/new-paint-colors-invented-by-neural-network)
-that made a nice blog post about given rgb colors generate color names.
-These two sources gave us the idea to make a workshop about it!**
+that made a nice blog post about bulding a model that given rgb colors generate
+color names. These two sources gave us the idea to make a workshop about it!**
 
 The pre-trained model available at pretrained folder was trained on
 [this dataset](https://goo.gl/vcBvQ2) which was preprocessed by
