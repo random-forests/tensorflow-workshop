@@ -2,33 +2,21 @@
 
 ##  Install TensorFlow version 1.3rc2
 
-Welcome! This code requires **TensorFlow version 1.3** which at the time of writing, has not been released. You can install the release candidate (v1.3rc2) using these instructions.
+This code requires **TensorFlow version 1.3** which at the time of writing, has not been released. You can install the release candidate (v1.3rc2) using these instructions. Choose the option that's right for you:
 
 ### 1. Install the RC using Docker
 
-This approach is the easiest option, works similarly on Mac, Linux, and Windows, and is recommended if you have difficulty installing the RC in a virtual environment.
+This approach is the easiest option. It works similarly on Mac, Linux, and Windows, and is recommended if you have difficulty installing the RC in a virtual environment. 
 
-* [Run the TensorFlow Docker image on your laptop.](setup/install-docker-local.md)
+* [How-to run the TensorFlow Docker image on your laptop.](setup/install-docker-local.md)
 
-* [Run the TensorFlow Docker image on GCP.](setup/install-docker-cloud.md)
+* [How-to run the TensorFlow Docker image on GCP.](setup/install-docker-cloud.md)
 
 ### 2. Install the RC using pip in a Virtual Environment
 
-This approach is recommended if you prefer the smallest download.
+This approach is recommended if you prefer the smallest download. If you experience difficulty, try the Docker option above.
 
-Follow the [installation instructions](https://www.tensorflow.org/install/) on TensorFlow.org to create a Virtual Environment for your platform, but **stop** before installing TensorFlow with pip (e.g. *do not* run this  command ```pip install --upgrade tensorflow ```)
-
-After activating your virtual environment, run these commands inside it:
-
-```
-$ git clone https://github.com/random-forests/tensorflow-workshop.git
-$ cd tensorflow-workshop
-$ pip install -r setup/requirements.txt
-```
-
-This should install the TensorFlow RC and other libraries within your virtual environment. Now, start a Jupyter Notebook server by running:
-
-```$ jupyter notebook```
+* [How-to install the RC using pip.](setup/install-pip.md)
 
 ### Want to report a bug?
 
