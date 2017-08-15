@@ -1,7 +1,7 @@
 # Sentiment Analysis Tutorial
 
 This is the code and data used for the Sentiment Analysis Tutorial available
-at: [INSERT LINK]()
+at [`tutorial.md`](tutorial.md)
 
 In this tutorial we're going to show how to build a recurrent neural network
 (RNN) that learns how to classify movie reviews as positive or negative using
@@ -74,11 +74,11 @@ the model graph, and more.
 $ tensorboard --log_dir="sentiment_analysis_output"
 ```
 
-![imgs/tensorboard](imgs/tensorboard.png)
+![](../../images/sentiment_analysis_tensorboard.png)
 
 You can also check your TensorFlow graph to debug your graph if needed.
 
-![imgs/tensorboard_graph](imgs/tensorboard_graph.png)
+![](../../images/sentiment_analysis_tensorboard_graph.png)
 
 ### Training example output
 
@@ -161,7 +161,7 @@ Label: 1
 ## Done training? Play with your model!
 
 Make sure you pass the same arguments to *sentiment_analysis.py*
-and *sentiment_analysis.py --mode=classify* since in the classify mode
+and *sentiment_analysis.py --mode=classify* since in the *classify mode*
 the script will load the model trained in the `model_dir` so make sure
 you're running the same model.
 
@@ -264,8 +264,8 @@ binary sentiment analysis using TensorFlow high level APIs.
 
 * Finally, the model presented above can be easily changed to be used on
   different data and even perform different classification
-  or prediction tasks. More details can be seen in the [code]().
-  A great example is [colorbot](https://github.com/random-forests/tensorflow-workshop/blob/master/extras/colorbot/)
+  or prediction tasks. A great example of how to change this implementation to
+  perform different tasks is [colorbot](https://github.com/random-forests/tensorflow-workshop/blob/master/extras/colorbot/)
   a deep RNN model that receives a word (sequence of characters) as input
   and learns to predict a rgb value that better represents this word.
   As a result we have a color generator!
