@@ -18,11 +18,6 @@ This approach is recommended if you prefer the smallest download. If you experie
 
 * [How-to install the RC using pip.](setup/install-pip.md)
 
-
-1. [Run the TensorFlow Docker image on your laptop.](setup/install-docker.md)
-
-1. [Run the TensorFlow Docker image on a Cloud-based VM.](setup/install-cloud.md) This is a good option if you have difficulty using Docker on your laptop.
-
 ---
 If you get stuck, please refer to the full installation [instructions](https://www.tensorflow.org/install/) on tensorflow.org.
 
