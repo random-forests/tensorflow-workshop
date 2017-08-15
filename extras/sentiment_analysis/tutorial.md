@@ -5,17 +5,17 @@ In this tutorial we're going to learn how to build a
 to classify movie reviews as positive or negative using TensorFlow high level APIs
 ([Estimators](https://www.tensorflow.org/extend/estimators),
 [Datasets](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/programmers_guide/datasets.md),
-[tf.layers](https://www.tensorflow.org/api_docs/python/tf/layers), ...), these APIs
+[tf.layers](https://www.tensorflow.org/api_docs/python/tf/layers)), these APIs
 make it easier to build scalable and maintainable models that you can efficiently
 train on a large amount of data.
 
 You may be thinking… “Why should I read another sentiment analysis tutorial using
 TensorFlow if there are already many of those?”
 
-Well, Sentiment analysis is a well know problem that we can use RNNs to approach,
-and it’s easy to understand the problem and how to apply RNNs. Also, it’s a real
-application and an interesting problem! Check [this paper](https://arxiv.org/pdf/1708.00524.pdf)
-about detecting sentiment on text using emojis occurrences.
+Sentiment analysis is a well know and easily understable problem that can be approached
+with a RNN model. Also, it’s a real application and an interesting problem! Check
+[this paper](https://arxiv.org/pdf/1708.00524.pdf) about detecting sentiment on text
+using emojis occurrences.
 
 Our goal is not implementing the greatest sentiment analysis model ever,
 but mainly to give a practical starting point to write your own Estimators models
@@ -374,7 +374,7 @@ seconds to process 100 batches.
 
 For more details about padding and batching with RNNs watch
 this great talk:
-[Sequence Models and the RNN API (TensorFlow Dev Summit 2017)](https://youtu.be/RIR_-Xlbp7s?t=4m14s)
+[Sequence Models and the RNN API (TensorFlow Dev Summit 2017)](https://youtu.be/RIR_-Xlbp7s?t=4m14s).
 
 You can see the all the input function implementations used in this
 tutorial at [`input_function_lib.py`](input_function_lib.py).
@@ -462,13 +462,13 @@ an internal state that is updated based on the seen inputs and on
 it's own previous state (memory).
 
 ![](../../images/sentiment_analysis_RNN.jpg)
-Image from: http://colah.github.io/posts/2015-08-Understanding-LSTMs/  
+*Image from: http://colah.github.io/posts/2015-08-Understanding-LSTMs/*
 
 RNNs can be seen as multiple copies (cells) of the same network,
 where each copy shares information about what it has seen to the next cell.
 
-![](../../images/sentiment_analysis_RNN_unroll.jpg)
-Image from: http://colah.github.io/posts/2015-08-Understanding-LSTMs/  
+![](../../images/sentiment_analysis_RNN_unfold.jpg)
+*Image from: http://colah.github.io/posts/2015-08-Understanding-LSTMs/* 
 
 The Pseudo-code to run and update the state of a basic RNN cell
 would be something similar to:
