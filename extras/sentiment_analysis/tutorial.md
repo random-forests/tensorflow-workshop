@@ -1,40 +1,40 @@
-# Sentiment Analysis Tutorial
+# Building a RNN model for Sentiment Analysis using TensorFlow’s high level APIs
 
-### This is not updated: it was moved to a Doc, ask @monteirom
+In this tutorial we're going to learn how to build a
+[Recurrent Neural Network (RNN)](https://en.wikipedia.org/wiki/Recurrent_neural_network)
+to classify movie reviews as positive or negative using TensorFlow high level APIs
+([Estimators](https://www.tensorflow.org/extend/estimators),
+[Datasets](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/programmers_guide/datasets.md),
+[tf.layers](https://www.tensorflow.org/api_docs/python/tf/layers), ...), these APIs
+make it easier to build scalable and maintainable models that you can efficiently
+train on a large amount of data.
 
-In this tutorial we're going to show how to build a Recurrent Neural
-Network (RNN) that learns how to classify movie reviews as positive or
-negative using TensorFlow high level APIs.
+You may be thinking… “Why should I read another sentiment analysis tutorial using
+TensorFlow if there are already many of those?”
 
-More specifically we're going to build a Recurrent Neural Network for a 
-[Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
-application using an [Estimator](https://www.tensorflow.org/extend/estimators).
-Our task will consist of: given a sentence (sequence of words) classify
-it as positive or negative.
+Well, Sentiment analysis is a well know problem that we can use RNNs to approach,
+and it’s easy to understand the problem and how to apply RNNs. Also, it’s a real
+application and an interesting problem! Check [this paper](https://arxiv.org/pdf/1708.00524.pdf)
+about detecting sentiment on text using emojis occurrences.
 
-The code and instructions about how to run it can be seen
-[here #TODO: INSERT LINK]().
-
-The goal is that at the end of this tutorial you'll be able to start
-writing your own Estimator models and using TensorFlow APIs  through
-this practical example and at the same time learn more about RNN models.
-The model presented here doesn't get to the state of the art accuracy,
-and is not our goal to do so, the dataset is actually too small for a
-LSTM to have big advantages compared to simpler and faster methods, but
-this is a great example of to get started with.
-For a state of the art approach check
-[this tutorial](https://www.tensorflow.org/tutorials/recurrent).
+Our goal is not implementing the greatest sentiment analysis model ever,
+but mainly to give a practical starting point to write your own Estimators models
+using the new APIs and at the same time learn more about how to build RNN models
+on TensorFlow. If you’re disappointed that we’re not getting state of the art accuracy,
+check [this tutorial](https://www.tensorflow.org/tutorials/recurrent).
 
 ## Introduction
 
 For this tutorial we understand you're already familiar with basic RNN
-concepts and with TensorFlow. As a start point to Estimators we recommend
-you to take a look at:
+concepts and have implemented a basic TensorFlow model (for example, perhaps you’ve worked through the
+[MNIST For ML Beginners tutorial](https://www.tensorflow.org/get_started/mnist/beginners)).
+If you want to learn more about Estimators, and how they look like check:
   * [Estimators](https://www.tensorflow.org/extend/estimators)
+  * [Effective TensorFlow for Non-Experts (Google I/O '17)](https://www.youtube.com/watch?v=5DknTFbcGVM&t=1217s)
 
 ## Tutorial Files
 
-This tutorial references the following files from [#TODO: INSERT LINK]():
+This tutorial references the following files at this folder.
 
 File | Purpose
 --- | ---
@@ -67,38 +67,19 @@ even number of positive and negative reviews.
 
 Examples of reviews in the dataset:
 
-#### Negative Review
+* **Negative review**: I was very curious to see this film, after having heard that
+it was clever and witty. I had to stop halfway because of the unbearable boredom I
+felt... First of all, the film was so down-to-earth that it looked as if, by
+describing the problems that a couple must solve on a day-to-day basis, it became
+itself ordinary and dull. Secondly, the overall sloppiness of the production, with
+dialogues that were barely understandable. Too bad.
 
-```
-I was very curious to see this film, after having heard that it was clever
-and witty. I had to stop halfway because of the unbearable boredom I felt.
-The idea behind the film would have been acceptable: depicting the way
-the relationship between a man and a woman evolves,
-through all the problems and difficulties that two people living in a
-big city can experience. What made me dislike the whole film were two things.
-First of all, the film was so down-to-earth that it looked as if,
-by describing the problems that a couple must solve on a day-to-day basis,
-it became itself ordinary and dull.
-Secondly, the overall sloppiness of the production,
-with dialogues that were barely understandable. Too bad.
-```
-
-#### Positive Review
-
-```
-Cinematically, this film stinks. So does a lot of the acting.
-But I don't care. If there is a strong representation of what the 80's
-were like(For a lot of us in the innercity anyways) and what hip-hop,
-Zulu nation, and break dancing were really like.Great music, great dancing!
-It almost seems like a documentary of a time now past when hip hop was a way
-of life. It's also interesting to see New York looking like ground zero
-from a nuclear attack. Some viewers may be too young to remember that It was
-a poor, run down city during the 70's and 80's. This is the best of all
-the hip-hop/break dancing movies that came out around that period.
-Of course the 80's are considered a joke now with all the bad tv shows and
-movies, but those of us who lived through it will always remember it fondly
-for a time when music, dancing, and graffiti were fresh, yo!
-```
+* **Positive Review**: Cinematically, this film stinks. So does a lot of the acting.
+But I don't care. If there is a strong representation of what the 80's were like...
+This is the best of all the hip-hop/break dancing movies that came out around that
+period. Of course the 80's are considered a joke now with all the bad tv shows and
+movies, but those of us who lived through it will always remember it fondly for a time
+when music, dancing, and graffiti were fresh, yo!
 
 ### Prepare the Data
 
@@ -106,9 +87,9 @@ When dealing with
 [NLP](https://en.wikipedia.org/wiki/Natural_language_processing)
 tasks it's very important to preprocess your data and to choose a good
 way to represent it, we're not going into details about how doing it in
-the best way possible, since this could be another complete tutorial,
-instead we're just going to describe how we did for this particular
-problem.
+the best way possible (this could be another complete tutorial), instead
+we're just going to describe how we did for this particular problem and
+other known popular approaches.
 
 #### Preprocess the Data
 
@@ -117,8 +98,9 @@ length equal 250. This was done mainly in order to avoid very long sequences.
 
 Padding is a common practice when working with RNNs but is not mandatory when
 working with RNNs on TensorFlow and is not the most efficient approach to pad
-all the sequences to the same length, we're going into more details about
-more efficient approaches later in this tutorial .
+all the sequences to the same length, we're going into more details about why
+this is not efficient and what are other more efficient approaches later in this
+tutorial.
 
 All characters were converted to lowercase and punctuation was removed
 for simplicity.
@@ -131,7 +113,7 @@ for simplicity.
 
 Neural Networks expect numeric inputs, this means we need to represent
 text as a numeric value. There are many possible approaches, two classical
-ways to do it are to:
+ways to do this are to:
   * Segment the text into words, representing each word as a vector;
   * Segment the text into characters, representing each character as a vector.
 
@@ -154,9 +136,10 @@ and contains 400000 words as 50 dim vectors. As a result we have a matrix
 of shape [400000, 50] where each row is a word representation.
 
 > Note: Thanks to [@adeshpande3](https://github.com/adeshpande3/LSTM-Sentiment-Analysis)
-  for providing this word embedding!
+  for providing this word embedding and this great tutorial
+  [Sentiment Analysis tutorial using low-level TensorFlow by O'Reilly](https://preview.oreilly.com/learning/perform-sentiment-analysis-with-lstms-using-tensorflow).
 
-![](imgs/embedding.png)
+![](../../images/sentiment_analysis_embedding.png)
 
 Each word in the review will be converted to an index that points to a row in the
 embedding. Each row has a 50 dim vector that better represents a particular
@@ -169,33 +152,29 @@ Our model will consist of a
 with a dense softmax layer on top of it. The final output is the probability of a
 review to be a positive (index 1) or negative review (index 0).
 
-![](imgs/model.png)
+![](../../images/sentiment_analysis_model.png)
 
-Before going into more details about the model itself, let's discuss
-briefly what is needed in order to implement an Estimator on TensorFlow.
+Before going into more details about the model itself, let's discuss what is needed
+in order to implement an Estimator on TensorFlow.
 
 ### Estimators
 
-Estimators are a high Level abstraction that support all the basic
+Estimators are a high-level abstraction that support all the basic
 operations you need on a Machine Learning model. They encode best
-practices, are ready for deployment with tensorflow/serving and
-are distributed and scalable by design.
+practices, are ready for deployment with [tensorflow/serving](https://www.tensorflow.org/serving/)
+and are distributed and scalable by design.
 
-![](imgs/estimator.png)
+![](../../images/estimator.png)
+*Image from Effective TensorFlow for Non-Experts (Google I/O '17)*
 
 In order to implement our own Estimator we basically need:
   * An [input function](https://www.tensorflow.org/get_started/input_fn):
-    this is the input pipeline implementation, where you're going to
+    the input pipeline implementation, where you're going to
     process your data and return the features and labels that will be used
     for training, evaluation and prediction using the Estimator interface.
   * A [model function](https://www.tensorflow.org/extend/estimators#constructing_the_model_fn):
     where will actually define our model, and the training, evaluation and
     prediction operations.
-
-For more about how to implement an Estimator check
-[this tutorial](https://www.tensorflow.org/versions/master/api_docs/python/tf/estimator/Estimator)
-or watch this talk
-[TensorFlow High level APIs at TensorFlow Dev Summit 2017](https://www.youtube.com/watch?v=t64ortpgS-E).
 
 Now let's have a look at the code!
 
@@ -211,23 +190,34 @@ the data doesn't fit in memory, an efficient and scalable way to implement
 your own input function is to use the
 [Dataset API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/programmers_guide/datasets.md).
 
-The Dataset API enables you to build complex input pipelines from simple,
+"*The Dataset API enables you to build complex input pipelines from simple,
 reusable pieces, making it easy to deal with large amounts of data, different
-data formats, and complicated transformations.
+data formats, and complicated transformations.*"
 
 Here's an input function implementation using the Dataset API.
 
 ```python
-def get_input_fn(x_in, y_in, batch_size,
-                 shuffle=True, epochs=1,
-                 batch_by_seq_len=False,
-                 max_length=250):
-  """Returns an input function used by train_sentiment_analysis.py."""
+def build_input_fn(x_in, y_in, batch_size,
+                   shuffle=True, epochs=1,
+                   max_length=250):
+  """Returns an input function created from word and class index arrays.
+  Args:
+    x_in: A numpy array of word indexes with shape (num_examples,
+      max_sequence_length). The array is padded on the right with zeros.
+    y_in: A numpy array of class indexes with shape (num_examples)
+    batch_size: Batch size for the input_fn to return
+    shuffle: A bool, indicating whether to shuffle the data or not.
+    epochs: Number of epochs for the input fun to generate.
+    max_length: Truncate sequences longer than max_length.
+  Returns:
+    An `input_fn`.
+  """
   def input_fn():
-    """Input function."""
+    """Input function used for train and eval; usually not called directly.
+    """
     # calculates the length of the sequences
     # since the inputs are already padded with zeros in the end
-    # the length will be the last index non zero + 1
+    # the length will be the last index that is non zero + 1
     x_len = np.array(
         [np.nonzero(seq)[0][-1] + 1 for seq in x_in]).astype('int32')
 
@@ -237,14 +227,13 @@ def get_input_fn(x_in, y_in, batch_size,
     # y_in: 1 if positive review, 0 if negative review
     ds = tf.contrib.data.Dataset.from_tensor_slices((x_in, x_len, y_in))
 
-    # repeats the dataset `epochs` times.
+    # repeats the dataset `epochs` times
     ds = ds.repeat(epochs)
 
     if shuffle:
       # make sure the buffer is big enough for your data
       ds = ds.shuffle(buffer_size=25000 * 2)
 
-    # batches the data
     ds = ds.batch(batch_size)
 
     # creates iterator
@@ -271,32 +260,48 @@ and **iterators**.
     * Batch:  constructs a dataset by stacking consecutive elements of another
       dataset into a single element.
 
-* A Iterator provides the main way to extract elements from a dataset.
+* An Iterator provides the main way to extract elements from a dataset.
   The Iterator.get_next() operation yields the next element of a Dataset, and
   typically acts as the interface between input pipeline code and your model.
+
+Most of this content is from the [Dataset API documentation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/docs_src/programmers_guide/datasets.md),
+where you can learn more about this API.
 
 The implementation above is not the most efficient way to batch the data for
 a RNN, we're wasting time and space by padding all the batches to have length
 equals to 250.
 
-![](imgs/batch.png)
+![](../../images/regular_batch.png)
+*Image from Sequence Models and the [RNN API (TensorFlow Dev Summit 2017)](https://www.youtube.com/watch?v=RIR_-Xlbp7s)*
 
 One possible approach to make it more efficient is to put sequences with
 similar length in the same batch. We implement this in the code below.
 
 ```python
-def get_input_fn(x_in, y_in, batch_size,
-                 shuffle=True, epochs=1,
-                 batch_by_seq_len=False,
-                 max_length=250):
-  """Returns an input function used by train_sentiment_analysis.py."""
+def build_input_fn(x_in, y_in, batch_size,
+                   shuffle=True, epochs=1,
+                   batch_by_seq_len=False,
+                   max_length=250):
+  """Returns an input function created from word and class index arrays.
+  Args:
+    x_in: A numpy array of word indexes with shape (num_examples,
+      max_sequence_length). The array is padded on the right with zeros.
+    y_in: A numpy array of class indexes with shape (num_examples)
+    batch_size: Batch size for the input_fn to return
+    shuffle: A bool, indicating whether to shuffle the data or not.
+    epochs: Number of epochs for the input fun to generate.
+    batch_by_seq_len: A bool to activate sequence length batching.
+    max_length: Truncate sequences longer than max_length.
+  Returns:
+    An `input_fn`.
+  """
   def _length_bin(length, max_seq_len, length_step=10):
     """Sets the sequence length bin."""
     bin_id = (length // length_step + 1) * length_step
     return tf.cast(tf.minimum(bin_id, max_seq_len), tf.int64)
 
   def _make_batch(key, ds):
-    """Removes extra padding and batches the bin."""
+    """Removes extra padding and batchs the bin."""
     # eliminate the extra padding
     key = tf.cast(key, tf.int32)
     ds = ds.map(lambda x, x_len, y: (x[:key], x_len, y))
@@ -306,10 +311,11 @@ def get_input_fn(x_in, y_in, batch_size,
     return ds
 
   def input_fn():
-    """Input function."""
+    """Input function used for train and eval; usually not called directly.
+    """
     # calculates the length of the sequences
     # since the inputs are already padded with zeros in the end
-    # the length will be the last index non zero + 1
+    # the length will be the last index that is non zero + 1
     x_len = np.array(
         [np.nonzero(seq)[0][-1] + 1 for seq in x_in]).astype('int32')
 
@@ -327,8 +333,7 @@ def get_input_fn(x_in, y_in, batch_size,
       ds = ds.shuffle(buffer_size=25000 * 2)
 
     if batch_by_seq_len:
-      # manually implement bucket by sequence length
-      # the idea is to make batches with sequences of similar length
+      # implement a simple `Dataset` version of `bucket_by_sequence_length`
       # https://goo.gl/y67FQm
       ds = ds.group_by_window(
           key_func=lambda x, x_len, y: _length_bin(x_len, max_length),
@@ -364,26 +369,32 @@ running it on my local machine, in other words if we take ~16 seconds to
 process 100 batches using the usual batch implementation, now we take ~12
 seconds to process 100 batches.
 
-![](imgs/batch_by_seq_len.png)
+![](../../images/batch_by_length.png)
+*Image from Sequence Models and the [RNN API (TensorFlow Dev Summit 2017)](https://www.youtube.com/watch?v=RIR_-Xlbp7s)*
 
 For more details about padding and batching with RNNs watch
 this great talk:
 [Sequence Models and the RNN API (TensorFlow Dev Summit 2017)](https://youtu.be/RIR_-Xlbp7s?t=4m14s)
 
 You can see the all the input function implementations used in this
-tutorial at [#TODO: INSERT LINK]().
+tutorial at [`input_function_lib.py`](input_function_lib.py).
 
-We can create different input functions calling `get_input_fn`, like:
+We can create different input functions calling `build_input_fn`.
 
 ```python
-# input functions
-train_input_fn = get_input_fn(x_train, y_train, FLAGS.train_batch_size,
-                              epochs=FLAGS.num_epochs,
-                              batch_by_seq_len=not(FLAGS.dont_batch_by_seq_len))
+# defining input functions
+# train input function
+train_input_fn = build_input_fn(x_train, y_train, FLAGS.train_batch_size,
+                                epochs=FLAGS.num_epochs,
+                                batch_by_seq_len=FLAGS.batch_by_seq_len)
 
-eval_input_fn = get_input_fn(x_eval, y_eval, FLAGS.eval_batch_size, epochs=1)
+# eval input function
+eval_input_fn = build_input_fn(x_eval, y_eval, FLAGS.eval_batch_size,
+                               epochs=1)
 
-sample_input_fn = get_input_fn(x_sample, y_sample, 1, epochs=1, shuffle=False)
+# input function used to classify samples
+sample_input_fn = build_input_fn(x_sample, y_sample, 1, epochs=1,
+                                 shuffle=False)
 ```
 
 ### Model Definition
@@ -391,8 +402,8 @@ sample_input_fn = get_input_fn(x_sample, y_sample, 1, epochs=1, shuffle=False)
 We'll define our model implementing a model function, where we'll also define
 the operations used for training, evaluation and prediction. In this tutorial
 we'll focus on the model itself, and we'll comment briefly about the
-operations chosen, since you can easily learn more about the operations and
-what they're doing in the TensorFlow documentation and other online materials.
+operations chosen, since you can easily learn more about them in the TensorFlow
+documentation and other online materials.
 
 Our model function definition looks like:
 
@@ -410,15 +421,14 @@ defined, the `mode` is a string value indicating the context in which the
 argument containing a dict of hyperparameters used for training. More details
 [here](https://www.tensorflow.org/extend/estimators#constructing_the_model_fn).
 
-The complete model implementation can be found at
-[#TODO: INSERT LINK]().
+The complete model implementation can be found at [`model_fn_lib.py`](model_fn_lib.py).
 
 Let's have look at the model function implementation.
 
 #### Embedding
 
 First, we need to represent the words as vectors, the `features['x']`
-is a tensor with indexes mapping the word to a row in the `word_vector`
+is a tensor with indexes mapping the word to a row in the `pretrained_embeddings`
 matrix (the pre-trained word embedding).
 
 This is simplest code to load the embedding and convert the indexes to
@@ -429,17 +439,15 @@ vectors, there's a discussion about how to do this in a more efficient way
   # get the sequences from the features dict
   review = features['x']
 
-  # defining constant to store pre-trained embedding
-  W = tf.constant(word_vector, name='W')
-  # indexes -> vectors using the embedding
+  # applying pre-trained embedding
+  W = tf.constant(pretrained_embeddings, name='W')
   data = tf.nn.embedding_lookup(W, review)
 ```
 
 Once we converted the indexes to actual vectors, the `data` variable defined
 above will be a 3-dim vector with shape [BATCH_SIZE, MAX_LENGTH, 50]
 
-![](imgs/input.png)
-
+![](../../images/sentiment_analysis_input_shape.png)
 
 #### RNN
 
@@ -453,14 +461,13 @@ RNNs are neural networks that have memory, in other words they have
 an internal state that is updated based on the seen inputs and on
 it's own previous state (memory).
 
-![](imgs/RNN.png)
+![](../../images/sentiment_analysis_RNN.jpg)
 Image from: http://colah.github.io/posts/2015-08-Understanding-LSTMs/  
 
-Another way to see the RNN, is just unroll it over time. This way a RNN can
-be seen as multiple copies (cells) of the same network, where each copy shares
-information about what it has seen to the next cell.
+RNNs can be seen as multiple copies (cells) of the same network,
+where each copy shares information about what it has seen to the next cell.
 
-![](imgs/RNN_unroll.png)
+![](../../images/sentiment_analysis_RNN_unroll.jpg)
 Image from: http://colah.github.io/posts/2015-08-Understanding-LSTMs/  
 
 The Pseudo-code to run and update the state of a basic RNN cell
@@ -476,30 +483,31 @@ To learn more about RNNs check:
  * [Understanding LSTM Networks at colah's blog](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
  * [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
-In this tutorial we will actually implement a special type of RNN cell called
+In this tutorial we'll actually implement a special type of RNN cell called
 Long Sort Term Memory Cell (LSTM), which is capable of learning
 long-term dependencies.
 
 TensorFlow allow us to implement complex cell types and operations in a few
-lines of code!
-
-In the code below we're creating multiple LSTMCells, then adding dropout
-in the output and hidden state of each of them if running in training mode.
+lines of code. In the code below we're creating multiple LSTMCells,
+then adding dropout in the output and hidden state of each of them if running in
+training mode.
 
 ```python
-if dropout_keep_probabilities:
-  # if we're not training we want to keep all RNN cells
-  if is_training:
-    probabilities = [1] * len(dropout_keep_probabilities)
-  else:
-    probabilities = dropout_keep_probabilities
+if dropout_keep_probabilities:0
+ # if we're not training we want to keep all RNN cells
+ if is_training:
+   probabilities = dropout_keep_probabilities
+ else:
+   probabilities = [1] * len(dropout_keep_probabilities)
 
-  rnn_layers = [tf.nn.rnn_cell.DropoutWrapper(
-      tf.nn.rnn_cell.LSTMCell(size),
-      output_keep_prob=keep_prob,
-      state_keep_prob=keep_prob)
-                for size, keep_prob in zip(rnn_cell_sizes,
-                                           probabilities)]
+ # creating the LSTMCells and adding dropout
+ # check https://www.tensorflow.org/api_docs/python/tf/contrib/rnn for more
+ rnn_layers = [
+     tf.nn.rnn_cell.DropoutWrapper(tf.nn.rnn_cell.LSTMCell(size),
+                                   output_keep_prob=keep_prob,
+                                   state_keep_prob=keep_prob)
+     for size, keep_prob in zip(rnn_cell_sizes, probabilities)
+ ]
 ```
 
 Once we created the cells, we can stack them.
@@ -517,10 +525,14 @@ that will actually implement the RNN "for loop", returning all the outputs
 over time and the final state.
 
 ```python
-# outputs: [BATCH_SIZE, SEQUENCE_LENGTH, STATE_SIZE]
-# final state: tuple where the first element is a tf.contrib.rnn.LSTMStateTuple
+# outputs: a tensor with shape [BATCH_SIZE, SEQUENCE_LENGTH, STATE_SIZE]
+# final state: tuple where the for each RNN layer (cell) there's a
+# tf.contrib.rnn.LSTMStateTuple where:
+# c is the hidden state and h is the output of a given cell
+# https://www.tensorflow.org/api_docs/python/tf/contrib/rnn/LSTMStateTuple
 outputs, final_state = tf.nn.dynamic_rnn(cell=multi_rnn_cell,
                                          inputs=data,
+                                         sequence_length=sequence_length,
                                          dtype=tf.float32)
 ```
 
@@ -534,13 +546,14 @@ implementation) or get the average from the hidden states as suggested by
 
 ```python
 if average_hidden_states:
-  last_activations = tf.div(
+  dense_layer_input = tf.div(
       tf.reduce_sum(outputs, axis=1),
       tf.cast(sequence_length[:, tf.newaxis], dtype=tf.float32))
 else:
   # slice to keep only the last cell of the RNN
-  last_activations = rnn_common.select_last_activations(outputs,
-                                                        sequence_length)
+  # each value at final state is a LSTMStateTuple
+  dense_layer_input = final_state[-1].h
+
 ```
 
 #### Dense Softmax Layer
@@ -550,7 +563,7 @@ Adding dense layers to the model is very straight forward with the
 
 ```python
 # final dense layer for prediction
-predictions = tf.layers.dense(last_activations, label_dimension)
+predictions = tf.layers.dense(dense_layer_input, label_dimension)
 predictions_softmax = tf.nn.softmax(predictions)
 ```
 
@@ -568,14 +581,13 @@ train_op = None
 eval_op = None
 
 if not is_predict:
-  labels_onehot = tf.one_hot(labels, 2)
-  loss = tf.losses.softmax_cross_entropy(labels_onehot, predictions)
+  loss = tf.losses.sparse_softmax_cross_entropy(labels, predictions)
 
 if is_eval:
   eval_op = {
       'accuracy': tf.metrics.accuracy(
           tf.argmax(input=predictions_softmax, axis=1),
-          tf.argmax(input=labels_onehot, axis=1))
+          labels)
   }
 
 if is_training:
@@ -585,7 +597,6 @@ if is_training:
       optimizer=optimizer,
       learning_rate=learning_rate)
 
-# return the estimator definition
 return tf.estimator.EstimatorSpec(mode,
                                   predictions=predictions_softmax,
                                   loss=loss,
@@ -655,33 +666,27 @@ way using data-parallelism you just need to create an
 Experiments know how to invoke train and eval in a sensible fashion for
 distributed training.
 
-Below is all the code used to create and run an Experiment.
+Below is the code used to create and run an Experiment.
 
 ```python
-def get_experiment(estimator, train_input, eval_input):
+def build_experiment_fn(estimator, train_input, eval_input):
+  """Return an Experiment function."""
   def _experiment_fn(run_config, hparams):
-    """Creates experiment.
-
-    Experiments perform training on several workers in parallel,
-    in other words Experiments know how to invoke train and eval
-    in a sensible fashion for distributed training.
-
-    We first prepare an estimator, and bundle it
-    together with input functions for training and evaluation
-    then collect all that in an Experiment object.
+    """Create experiment.
+    Experiments perform training on several workers in parallel. In other
+    words Experiments know how to invoke train and eval in a sensible
+    fashion for distributed training.
+    We first prepare an estimator, and bundle it together with input functions
+    for training and evaluation then collect all that in an Experiment object
+    that will train and evaluate our model.
     """
-    del run_config, hparams  #unused args
+    del run_config, hparams  # unused args
     return tf.contrib.learn.Experiment(
         estimator,
         train_input_fn=train_input,
         eval_input_fn=eval_input
     )
   return _experiment_fn
-
-# run training and evaluation using an Experiment
-learn_runner.run(get_experiment(estimator, train_input, eval_input),
-                 run_config=run_config)
-
 ```
 
 ## Predicting
@@ -723,14 +728,12 @@ You can also try to classify new sentences with this model.
 # by default the model_dir is "sentiment_analysis_output"
 $ python sentiment_analysis.py --mode=classify --model_dir="sentiment_analysis_output"
 ```
-
 Make sure you pass the same arguments to `sentiment_analysis.py` and
 `sentiment_analysis.py --mode=classify`, since it will load the same model you
 just trained make sure you're building the same model running in both modes.
 
 Here are some sentences we tried with a model that got 82% accuracy, we can get
-about 86% accuracy with the model training it for ~6000 steps, but we found that
-the model trained around ~4000 is more fun to play with.
+about 86% accuracy with the model training it for ~6000 steps.
 
 ```
 Write your review (or type <exit> to exit): it was fine i guess
@@ -779,7 +782,7 @@ Positive: 0.461185
 We can see that the model learned some interesting relations,
 but is definitely not perfect and can be improved.
 
-## Visualizing your Model
+## Visualizing your Model with TensorBoard
 
 When using estimators you can also visualize your data in
 [TensorBoard](https://www.tensorflow.org/get_started/summaries_and_tensorboard),
@@ -796,11 +799,11 @@ Here's what you see if you run TensorBoard in the `model_dir` you used for your 
 $ tensorboard --log_dir="sentiment_analysis_output"
 ```
 
-![imgs/tensorboard](imgs/tensorboard.png)
+![](../../images/sentiment_analysis_tensorboard.png)
 
 You can also visualize your TensorFlow graph, which is very useful for debugging purposes.
 
-![imgs/tensorboard_graph](imgs/tensorboard_graph.png)
+![](../../images/sentiment_analysis_tensorboard_graph.png)
 
 ## What's next?
 
@@ -815,12 +818,14 @@ binary sentiment analysis using TensorFlow high level APIs.
 
 * Finally, the model presented above can be easily changed to be used on
   different data and even perform different classification or prediction tasks.
-  More details can be seen in the [code #TODO: INSERT LINK]().
+  More details can be seen in the code presented here.
   A great example is
-  [colorbot](https://github.com/mari-linhares/tensorflow-workshop/blob/master/code_samples/RNN/colorbot/)
+  [colorbot](../colorbot/)
   a deep RNN model that receives a word (sequence of characters) as input and
   learns to predict a rgb value that better represents this word. As a result
   we have a color generator!
+
+![](../../images/colorbot_prediction_sample.png)
 
 * Learn more about:
   * [RNNs](https://www.tensorflow.org/tutorials/recurrent)
