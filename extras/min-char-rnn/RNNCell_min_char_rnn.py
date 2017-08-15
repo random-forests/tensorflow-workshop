@@ -26,8 +26,8 @@ char_to_ix = {ch: i for i, ch in enumerate(chars)}
 ix_to_char = {i: ch for i, ch in enumerate(chars)}
 
 # hyperparameters
-HIDDEN_SIZE = 100  # hidden layer's size
-SEQ_LENGTH = 25   # number of steps to unroll
+HIDDEN_SIZE = 100    # hidden layer's size
+SEQ_LENGTH = 25      # number of steps to unroll
 LEARNING_RATE = 0.1  # size of step for Gradient Descent
 BATCH_SIZE = 1       # number of sequences evaluated at each train step
 
@@ -53,8 +53,8 @@ rnn_cell = tf.nn.rnn_cell.GRUCell(HIDDEN_SIZE)
 '''
 
 # run RNN
-# rnn_outputs: [ BATCH_SIZE, SEQ_LEN, HIDDEN_SIZE]
-# final_state: [ BATCH_SIZE, HIDDEN_SIZE]
+# rnn_outputs: [BATCH_SIZE, SEQ_LEN, HIDDEN_SIZE]
+# final_state: [BATCH_SIZE, HIDDEN_SIZE]
 rnn_outputs, final_state = tf.nn.dynamic_rnn(rnn_cell, input_x,
                                              initial_state=init_state,
                                              dtype=tf.float32)
