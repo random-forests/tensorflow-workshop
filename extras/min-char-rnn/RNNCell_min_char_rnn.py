@@ -16,7 +16,7 @@ print(tf.__version__)
 # data I/O
 
 # should be simple plain text file
-data = open('data/about_tensorflow.txt', 'r').read()
+data = open('about_tensorflow.txt', 'r').read()
 chars = list(set(data))
 
 DATA_SIZE, VOCAB_SIZE = len(data), len(chars)
