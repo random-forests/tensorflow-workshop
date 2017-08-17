@@ -1,22 +1,22 @@
 # Welcome
 
-##  Install TensorFlow version 1.3rc2
+##  Install TensorFlow version 1.3.0
 
-This code requires **TensorFlow version 1.3** which at the time of writing, has not been released. You can install the release candidate (v1.3rc2) using these instructions. Choose the option that's right for you:
+This code requires **TensorFlow version 1.3**. Please choose the installation option that's right for you.
 
-### 1. Install the RC using Docker
+### 1. Install TensorFlow using Docker
 
-This approach is the easiest option. It works similarly on Mac, Linux, and Windows, and is recommended if you have difficulty installing the RC in a virtual environment. 
+This is the easiest option, but the largest download. It's recommended if you have difficulty using a virtual environment. 
 
 * [How-to run the TensorFlow Docker image on your laptop.](setup/install-docker-local.md)
 
 * [How-to run the TensorFlow Docker image on GCP.](setup/install-docker-cloud.md)
 
-### 2. Install the RC using pip in a Virtual Environment
+### 2. Install TensorFlow using pip in a Virtual Environment
 
-This approach is recommended if you prefer the smallest download. If you experience difficulty, try the Docker option above.
+This is recommended if you prefer the smallest download. If you experience difficulty, try the Docker option above.
 
-* [How-to install the RC using pip.](setup/install-pip.md)
+* [How-to install TensorFlow using pip.](setup/install-pip.md)
 
 ### Want to report a bug?
 
