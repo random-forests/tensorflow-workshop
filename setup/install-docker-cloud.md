@@ -62,10 +62,12 @@ gcloud compute firewall-rules create workshop --allow tcp:8888,tcp:6006
 In the SSH browser window that's connected to the GCE instance, run this command to download and run the container:
 
 ```shell
-$ docker run -it -p 8888:8888 -p 6006:6006 tensorflow/tensorflow:1.3.0-rc2 bash
+$ docker run -it -p 8888:8888 -p 6006:6006 tensorflow/tensorflow:1.3.0 bash
 ```
 
 When this command completes, the terminal in your SSH browser window will be connected to the running container.
+
+Note: you can find a list of tensorflow containers on Dockerhub [here](https://hub.docker.com/r/tensorflow/tensorflow/).
 
 ### 7. Clone the workshop
 
