@@ -13,10 +13,12 @@ Visit [www.docker.com](https://www.docker.com) to download and install Docker on
 Once Docker is installed and running on your laptop: open a terminal, and download the TensorFlow container using this command.
 
 ```
-$ docker pull tensorflow/tensorflow:1.3.0-rc2-devel
+$ docker pull tensorflow/tensorflow:1.3.0-devel
 ```
 
-Note: this is about 800 MB. 
+Note: this is about 800 MB. If you have git installed on your local machine, you can use "tensorflow/tensorflow:1.3.0" rather than the *devel* build, for a smaller download.
+
+You can find a list of tensorflow containers on Dockerhub [here](https://hub.docker.com/r/tensorflow/tensorflow/).
 
 ## Step 3: Create a shared directory
 
@@ -33,7 +35,7 @@ $ mkdir ~/shared
 Run this monster command to start the container.
 
 ```
-$ docker run -it -p 8888:8888 -p 6006:6006 -v ~/shared:/shared tensorflow/tensorflow:1.3.0-rc2-devel bash
+$ docker run -it -p 8888:8888 -p 6006:6006 -v ~/shared:/shared tensorflow/tensorflow:1.3.0-devel bash
 ```
 
 Long command, right? Here's what the arguments do:
