@@ -9,8 +9,7 @@ training and evaluating models in TensorFlow.
 
 For a more in-depth introduction to convolutional neural networks in
 TensorFlow without Estimator, please read the official tutorial:
-
-    https://www.tensorflow.org/tutorials/deep_cnn
+https://www.tensorflow.org/tutorials/deep_cnn
 
 Note: this repo intentionally leaves out the dataset. Download the data from
 the link below.
@@ -19,6 +18,8 @@ Some useful links:
 * CIFAR-10 dataset: http://www.cs.toronto.edu/~kriz/cifar.html
 * Install TensorFlow: https://www.tensorflow.org/install/
 * TensorFlow Estimator: https://www.tensorflow.org/extend/estimators
+
+---
 
 Short installation guide (assuming you have virtualenv):
 ```
