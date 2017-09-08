@@ -2,6 +2,9 @@
 A very simplified introduction to TensorFlow using Estimator API for training a
 cat vs. dog classifier from the CIFAR-10 dataset. This version is intentionally
 simplified and has a lot of room for improvment, in speed and accuracy.
+
+Usage:
+  python main.py [train|predict] [predict file]
 """
 
 import sys
@@ -10,31 +13,35 @@ import numpy as np
 from PIL import Image
 import tensorflow as tf
 
+# Data file saved by extract_cats_dogs.py
 DATA_FILE = 'catdog_data.npy'
 NUM_IMAGES = 10000
+
+# Model checkpoints and logs are saved here. If you want to train from scratch,
+# be sure to delete everything in MODEL_DIR/ or change the directory.
 MODEL_DIR = 'models'
 
 # Some of the tunable hyperparameters are set here
 LEARNING_RATE = 0.01
 MOMENTUM = 0.9
-TRAIN_EPOCHS = 10
+TRAIN_EPOCHS = 20
 BATCH_SIZE = 32
 
 def model_fn(features, labels, mode):
   """Defines the CNN model that runs on the data.
 
-    The model we run is 3 convolutional layers followed by 1 fully connected
-    layer before the output. This is much simpler than most CNN models and is
-    designed to run decently on CPU. With a GPU, it is possible to scale to
-    more layers and more filters per layer.
+  The model we run is 3 convolutional layers followed by 1 fully connected
+  layer before the output. This is much simpler than most CNN models and is
+  designed to run decently on CPU. With a GPU, it is possible to scale to
+  more layers and more filters per layer.
 
-    Args:
-        features: batch_size x 32 x 32 x 3 uint8 images
-        labels: batch_size x 1 uint8 labels (0 or 1)
-        mode: TRAIN, EVAL, or PREDICT
+  Args:
+      features: batch_size x 32 x 32 x 3 uint8 images
+      labels: batch_size x 1 uint8 labels (0 or 1)
+      mode: TRAIN, EVAL, or PREDICT
 
-    Returns:
-        EstimatorSpec which defines the model to run
+  Returns:
+      EstimatorSpec which defines the model to run
   """
 
   # Preprocess the features by converting to floats in [-0.5, 0.5]
@@ -200,12 +207,15 @@ def main():
     sys.exit()
 
   tf.logging.set_verbosity(tf.logging.INFO)
+
+  # Create the estimator object that is used by train, evaluate, and predict
+  # Note that model_fn is not called until the first usage of the model.
   estimator = tf.estimator.Estimator(
       model_fn=model_fn,
       config=tf.estimator.RunConfig().replace(
           model_dir=MODEL_DIR))
   if sys.argv[1] == 'train':
-    steps_per_epoch = NUM_IMAGES / BATCH_SIZE       # Rounds down
+    steps_per_epoch = NUM_IMAGES / BATCH_SIZE
     for epoch in xrange(TRAIN_EPOCHS):
       estimator.train(
           input_fn=input_fn_wrapper(True),
@@ -220,7 +230,7 @@ def main():
       sys.exit()
     image = process_image(sys.argv[2])
 
-    # Define a new input function for prediction which output a single image
+    # Define a new input function for prediction which outputs a single image
     def predict_input_fn():
       np_input_fn = tf.estimator.inputs.numpy_input_fn(
           x={'x': image},

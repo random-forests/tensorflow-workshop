@@ -2,3 +2,4 @@
 cifar-10-*
 images/*
 models/*
+pretrained/*
