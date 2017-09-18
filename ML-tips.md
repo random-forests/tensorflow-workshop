@@ -28,6 +28,6 @@ Tip: focus on your data, and your features. They're almost always more important
 * Amazing features +10%
 
 ### Improving your **model**
-* Baesline model +50%
+* Baseline model +50%
 * Tuned model +10%
 * Amazing model +5% 
