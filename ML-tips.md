@@ -16,7 +16,7 @@
 
 Tip: don't agonize over the number of layers, or neurons per layer (it's fun to hack on these, but it's usually not that important). There are **many possible architectures** that will give similar accuracy. Remember: the goal is to develop a model that works well in production. 
 
-### TLDR: Design for **simplicity and reliable** first, and you're more likely to get a good result.
+### TLDR: Design for **simplicity and reliability** first, and you're more likely to get a good result.
 
 # What kind of accuracy improvement can I expect from...?
 
