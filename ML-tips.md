@@ -1,17 +1,3 @@
-# Where I spend my time when solving a problem with ML
-
-Tip: focus on your data, and your features. They're almost always more important than tuning your model. Here's the relative accuracy improvment you can expect from each activity.
-
-### Improving your **features**
-* Reasonable features +50%
-* Tuned features +20%
-* Amazing features +10%
-
-### Improving your **model**
-* Baesline model +50%
-* Tuned model +10%
-* Amazing model +5% 
-
 # Approach problems in this order
 
 1. Carefully think about what you want to predict, what success means, and how you will **evaluate it**.
@@ -33,3 +19,17 @@ Tip: don't agonize over the number of layers, or neurons per layer (it's fun to 
 Remember: the goal is to develop a model that works well in production. 
 
 ### Design for **simplicity and reliable** first, and you're more likely to get a good result.
+
+# What kind of accuracy improvement can I expect from...?
+
+Tip: focus on your data, and your features. They're almost always more important than tuning your model. Here's the relative accuracy improvment you can expect from each activity.
+
+### Improving your **features**
+* Reasonable features +50%
+* Tuned features +20%
+* Amazing features +10%
+
+### Improving your **model**
+* Baesline model +50%
+* Tuned model +10%
+* Amazing model +5% 
