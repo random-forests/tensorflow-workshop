@@ -1,4 +1,4 @@
-# Where should you spend your time when solving a problem with ML? 
+# Where I spend my time when solving a problem with ML
 
 Tip: focus on your data, and your features. They're almost always more important than tuning your model. Here's the relative accuracy improvment you can expect from each activity.
 
@@ -12,7 +12,7 @@ Tip: focus on your data, and your features. They're almost always more important
 * Tuned model +10%
 * Amazing model +5% 
 
-# Approach problems in this order:
+# Approach problems in this order
 
 1. Carefully think about what you want to predict, what success means, and how you will **evaluate it**.
 
