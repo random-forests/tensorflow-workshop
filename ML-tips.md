@@ -14,11 +14,9 @@
 
 7. Consider using a more complex model. Switch from a linear classifier to a DNN (**be careful not to overfit**). If you want to simulate production code, you get to use your test data only once. 
 
-Tip: don't agonize over the number of layers, or neurons per layer (it's fun to hack on these, but it's usually not that important). There are **many possible architectures** that will give similar accuracy.
+Tip: don't agonize over the number of layers, or neurons per layer (it's fun to hack on these, but it's usually not that important). There are **many possible architectures** that will give similar accuracy. Remember: the goal is to develop a model that works well in production. 
 
-Remember: the goal is to develop a model that works well in production. 
-
-### Design for **simplicity and reliable** first, and you're more likely to get a good result.
+### TLDR: Design for **simplicity and reliable** first, and you're more likely to get a good result.
 
 # What kind of accuracy improvement can I expect from...?
 
