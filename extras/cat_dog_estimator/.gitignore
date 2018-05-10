@@ -1,5 +1,0 @@
-*.npy
-cifar-10-*
-images/*
-models/*
-pretrained/*
