@@ -1,0 +1,551 @@
+Absolute Zero	#0048BA
+Acajou	#4C2F27
+Acid Green	#B0BF1A
+Aero	#7CB9E8
+Aero Blue	#C9FFE5
+African Violet	#B284BE
+Air Force Blue (RAF)	#5D8AA8
+Air Force Blue (USAF)	#00308F
+Air Superiority Blue	#72A0C1
+Alabama Crimson	#AF002A
+Alabaster	#F2F0E6
+Alice Blue	#F0F8FF
+Alien Armpit	#84DE02
+Alizarin Crimson	#E32636
+Alloy Orange	#C46210
+Almond	#EFDECD
+Amaranth	#E52B50
+Amaranth Deep Purple	#9F2B68
+Amaranth Pink	#F19CBB
+Amaranth Purple	#AB274F
+Amaranth Red	#D3212D
+Amazon	#3B7A57
+Amazonite	#00C4B0
+Amber	#FFBF00
+Amber (SAE/ECE)	#FF7E00
+American Blue	#3B3B6D
+American Brown	#804040
+American Gold	#D3AF37
+American Green	#34B334
+American Orange	#FF8B00
+American Pink	#FF9899
+American Purple	#431C53
+American Red	#B32134
+American Rose	#FF033E
+American Silver	#CFCFCF
+American Violet	#551B8C
+American Yellow	#F2B400
+Amethyst	#9966CC
+Android Green	#A4C639
+Anti-Flash White	#F2F3F4
+Antique Brass	#CD9575
+Antique Bronze	#665D1E
+Antique Fuchsia	#915C83
+Antique Ruby	#841B2D
+Antique White	#FAEBD7
+Ao (English)	#008000
+Apple	#66B447
+Apple Green	#8DB600
+Apricot	#FBCEB1
+Aqua	#00FFFF
+Aquamarine	#7FFFD4
+Arctic Lime	#D0FF14
+Army Green	#4B5320
+Arsenic	#3B444B
+Artichoke	#8F9779
+Arylide Yellow	#E9D66B
+Ash Gray	#B2BEB5
+Asparagus	#87A96B
+Ateneo Blue	#003A6C
+Atomic Tangerine	#FF9966
+Auburn	#A52A2A
+Aureolin	#FDEE00
+AuroMetalSaurus	#6E7F80
+Avocado	#568203
+Awesome	#FF2052
+Axolotl	#63775B
+Aztec Gold	#C39953
+Azure	#007FFF
+Azure (Web Color)	#F0FFFF
+Azure Mist	#F0FFFF
+Azureish White	#DBE9F4
+Baby Blue	#89CFF0
+Baby Blue Eyes	#A1CAF1
+Baby Pink	#F4C2C2
+Baby Powder	#FEFEFA
+Baker-Miller Pink	#FF91AF
+Ball Blue	#21ABCD
+Banana Mania	#FAE7B5
+Banana Yellow	#FFE135
+Bangladesh Green	#006A4E
+Barbie Pink	#E0218A
+Barn Red	#7C0A02
+Battery Charged Blue	#1DACD6
+Battleship Grey	#848482
+Bazaar	#98777B
+Beau Blue	#BCD4E6
+Beaver	#9F8170
+Begonia	#FA6E79
+Beige	#F5F5DC
+B'dazzled Blue	#2E5894
+Big Dip O’ruby	#9C2542
+Big Foot Feet	#E88E5A
+Bisque	#FFE4C4
+Bistre	#3D2B1F
+Bistre Brown	#967117
+Bitter Lemon	#CAE00D
+Bitter Lime	#BFFF00
+Bittersweet	#FE6F5E
+Bittersweet Shimmer	#BF4F51
+Black	#000000
+Black Bean	#3D0C02
+Black Chocolate	#1B1811
+Black Coffee	#3B2F2F
+Black Coral	#54626F
+Black Leather Jacket	#253529
+Black Olive	#3B3C36
+Blackberry	#8F5973
+Black Shadows	#BFAFB2
+Blanched Almond	#FFEBCD
+Blast-Off Bronze	#A57164
+Bleu De France	#318CE7
+Blizzard Blue	#ACE5EE
+Blond	#FAF0BE
+Blood Orange	#D1001C
+Blood Red	#660000
+Blue	#0000FF
+Blue (Crayola)	#1F75FE
+Blue (Munsell)	#0093AF
+Blue (NCS)	#0087BD
+Blue (Pantone)	#0018A8
+Blue (Pigment)	#333399
+Blue (RYB)	#0247FE
+Blue Bell	#A2A2D0
+Blue Bolt	#00B9FB
+Blue-Gray	#6699CC
+Blue-Green	#0D98BA
+Blue Jeans	#5DADEC
+Blue Lagoon	#ACE5EE
+Blue-Magenta Violet	#553592
+Blue Sapphire	#126180
+Blue-Violet	#8A2BE2
+Blue Yonder	#5072A7
+Blueberry	#4F86F7
+Bluebonnet	#1C1CF0
+Blush	#DE5D83
+Bole	#79443B
+Bondi Blue	#0095B6
+Bone	#E3DAC9
+Booger Buster	#DDE26A
+Boston University Red	#CC0000
+Bottle Green	#006A4E
+Boysenberry	#873260
+Brandeis Blue	#0070FF
+Brass	#B5A642
+Brick Red	#CB4154
+Bright Cerulean	#1DACD6
+Bright Gray	#EBECF0
+Bright Green	#66FF00
+Bright Lavender	#BF94E4
+Bright Lilac	#D891EF
+Bright Maroon	#C32148
+Bright Navy Blue	#1974D2
+Bright Pink	#FF007F
+Bright Turquoise	#08E8DE
+Bright Ube	#D19FE8
+Bright Yellow (Crayola)	#FFAA1D
+Brilliant Azure	#3399FF
+Brilliant Lavender	#F4BBFF
+Brilliant Rose	#FF55A3
+Brink Pink	#FB607F
+British Racing Green	#004225
+Bronze	#88540B
+Bronze	#CD7F32
+Bronze (Metallic)	#B08D57
+Bronze Yellow	#737000
+Brown	#993300
+Brown (Crayola)	#AF593E
+Brown (Traditional)	#964B00
+Brown (Web)	#A52A2A
+Brown-Nose	#6B4423
+Brown Sugar	#AF6E4D
+Brown Chocolate	#5F1933
+Brown Coffee	#4A2C2A
+Brown Yellow	#CC9966
+Brunswick Green	#1B4D3E
+Bubble Gum	#FFC1CC
+Bubbles	#E7FEFF
+Bud Green	#7BB661
+Buff	#F0DC82
+Bulgarian Rose	#480607
+Burgundy	#800020
+Burlywood	#DEB887
+Burnished Brown	#A17A74
+Burnt Orange	#CC5500
+Burnt Sienna	#E97451
+Burnt Umber	#8A3324
+Button Blue	#24A0ED
+Byzantine	#BD33A4
+Byzantium	#702963
+Cadet	#536872
+Cadet Blue	#5F9EA0
+Cadet Grey	#91A3B0
+Cadmium Blue	#0A1195
+Cadmium Green	#006B3C
+Cadmium Orange	#ED872D
+Cadmium Purple	#B60C26
+Cadmium Red	#E30022
+Cadmium Yellow	#FFF600
+Cadmium Violet	#7F3E98
+Café Au Lait	#A67B5B
+Café Noir	#4B3621
+Cal Poly Pomona Green	#1E4D2B
+Calamansi	#FCFFA4
+Cambridge Blue	#A3C1AD
+Camel	#C19A6B
+Cameo Pink	#EFBBCC
+Camouflage Green	#78866B
+Canary	#FFFF99
+Canary Yellow	#FFEF00
+Candy Apple Red	#FF0800
+Candy Pink	#E4717A
+Capri	#00BFFF
+Caput Mortuum	#592720
+Caramel	#FFD59A
+Cardinal	#C41E3A
+Caribbean Green	#00CC99
+Carmine	#960018
+Carmine (M&P)	#D70040
+Carmine Pink	#EB4C42
+Carmine Red	#FF0038
+Carnation Pink	#FFA6C9
+Carnelian	#B31B1B
+Carolina Blue	#56A0D3
+Carrot Orange	#ED9121
+Castleton Green	#00563F
+Catalina Blue	#062A78
+Catawba	#703642
+Cedar Chest	#C95A49
+Ceil	#92A1CF
+Celadon	#ACE1AF
+Celadon Blue	#007BA7
+Celadon Green	#2F847C
+Celeste	#B2FFFF
+Celestial Blue	#4997D0
+Cerise	#DE3163
+Cerise Pink	#EC3B83
+Cerulean	#007BA7
+Cerulean Blue	#2A52BE
+Cerulean Frost	#6D9BC3
+CG Blue	#007AA5
+CG Red	#E03C31
+Chamoisee	#A0785A
+Champagne	#F7E7CE
+Champagne Pink	#F1DDCF
+Charcoal	#36454F
+Charleston Green	#232B2B
+Charm	#D0748B
+Charm Pink	#E68FAC
+Chartreuse (Traditional)	#DFFF00
+Chartreuse (Web)	#7FFF00
+Cheese	#FFA600
+Cherry	#DE3163
+Cherry Blossom Pink	#FFB7C5
+Chestnut	#954535
+China Pink	#DE6FA1
+China Rose	#A8516E
+Chinese Black	#141414
+Chinese Blue	#365194
+Chinese Bronze	#CD8032
+Chinese Brown	#AB381F
+Chinese Green	#D0DB61
+Chinese Gold	#CC9900
+Chinese Orange	#F37042
+Chinese Pink	#DE70A1
+Chinese Purple	#720B98
+Chinese Red	#CD071E
+Chinese Red	#AA381E
+Chinese Silver	#CCCCCC
+Chinese Violet	#856088
+Chinese White	#E2E5DE
+Chinese Yellow	#FFB200
+Chlorophyll Green	#4AFF00
+Chocolate Kisses	#3C1421
+Chocolate (Traditional)	#7B3F00
+Chocolate (Web)	#D2691E
+Christmas Blue	#2A8FBD
+Christmas Blue	#365194
+Christmas Brown	#5D2B2C
+Christmas Brown	#4C1F02
+Christmas Green	#3C8D0D
+Christmas Green	#007502
+Christmas Gold	#CAA906
+Christmas Orange	#FF6600
+Christmas Orange	#D56C2B
+Christmas Pink	#FFCCCB
+Christmas Pink	#E34285
+Christmas Purple	#663398
+Christmas Purple	#4D084B
+Christmas Red	#AA0114
+Christmas Red	#B01B2E
+Christmas Silver	#E1DFE0
+Christmas Yellow	#FFCC00
+Christmas Yellow	#FEF200
+Chrome Yellow	#FFA700
+Cinereous	#98817B
+Cinnabar	#E34234
+Cinnamon[Citation Needed]	#D2691E
+Cinnamon Satin	#CD607E
+Citrine	#E4D00A
+Citrine Brown	#933709
+Citron	#9FA91F
+Claret	#7F1734
+Classic Rose	#FBCCE7
+Cobalt Blue	#0047AB
+Cocoa Brown	#D2691E
+Coconut	#965A3E
+Coffee	#6F4E37
+Cola	#3C3024
+Columbia Blue	#C4D8E2
+Conditioner	#FFFFCC
+Congo Pink	#F88379
+Cool Black	#002E63
+Cool Grey	#8C92AC
+Cookies And Cream	#EEE0B1
+Copper	#B87333
+Copper (Crayola)	#DA8A67
+Copper Penny	#AD6F69
+Copper Red	#CB6D51
+Copper Rose	#996666
+Coquelicot	#FF3800
+Coral	#FF7F50
+Coral Pink	#F88379
+Coral Red	#FF4040
+Coral Reef	#FD7C6E
+Cordovan	#893F45
+Corn	#FBEC5D
+Cornell Red	#B31B1B
+Cornflower Blue	#6495ED
+Cornsilk	#FFF8DC
+Cosmic Cobalt	#2E2D88
+Cosmic Latte	#FFF8E7
+Coyote Brown	#81613C
+Cotton Candy	#FFBCD9
+Cream	#FFFDD0
+Crimson	#DC143C
+Crimson Glory	#BE0032
+Crimson Red	#990000
+Cultured	#F5F5F5
+Cyan	#00FFFF
+Cyan Azure	#4E82B4
+Cyan-Blue Azure	#4682BF
+Cyan Cobalt Blue	#28589C
+Cyan Cornflower Blue	#188BC2
+Cyan (Process)	#00B7EB
+Cyber Grape	#58427C
+Cyber Yellow	#FFD300
+Cyclamen	#F56FA1
+Daffodil	#FFFF31
+Dandelion	#F0E130
+Dark Blue	#00008B
+Dark Blue-Gray	#666699
+Dark Bronze	#804A00
+Dark Brown	#654321
+Dark Brown-Tangelo	#88654E
+Dark Byzantium	#5D3954
+Dark Candy Apple Red	#A40000
+Dark Cerulean	#08457E
+Dark Charcoal	#333333
+Dark Chestnut	#986960
+Dark Chocolate	#490206
+Dark Chocolate (Hershey's)	#3C1321
+Dark Cornflower Blue	#26428B
+Dark Coral	#CD5B45
+Dark Cyan	#008B8B
+Dark Electric Blue	#536878
+Dark Goldenrod	#B8860B
+Dark Gray (X11)	#A9A9A9
+Dark Green	#013220
+Dark Green (X11)	#006400
+Dark Gunmetal	#1F262A
+Dark Imperial Blue	#00416A
+Dark Imperial Blue	#00147E
+Dark Jungle Green	#1A2421
+Dark Khaki	#BDB76B
+Dark Lava	#483C32
+Dark Lavender	#734F96
+Dark Lemon Lime	#8BBE1B
+Dark Liver	#534B4F
+Dark Liver (Horses)	#543D37
+Dark Magenta	#8B008B
+Dark Medium Gray	#A9A9A9
+Dark Midnight Blue	#003366
+Dark Moss Green	#4A5D23
+Dark Olive Green	#556B2F
+Dark Orange	#FF8C00
+Dark Orchid	#9932CC
+Dark Pastel Blue	#779ECB
+Dark Pastel Green	#03C03C
+Dark Pastel Purple	#966FD6
+Dark Pastel Red	#C23B22
+Dark Pink	#E75480
+Dark Powder Blue	#003399
+Dark Puce	#4F3A3C
+Dark Purple	#301934
+Dark Raspberry	#872657
+Dark Red	#8B0000
+Dark Salmon	#E9967A
+Dark Scarlet	#560319
+Dark Sea Green	#8FBC8F
+Dark Sienna	#3C1414
+Dark Sky Blue	#8CBED6
+Dark Slate Blue	#483D8B
+Dark Slate Gray	#2F4F4F
+Dark Spring Green	#177245
+Dark Tan	#918151
+Dark Tangerine	#FFA812
+Dark Taupe	#483C32
+Dark Terra Cotta	#CC4E5C
+Dark Turquoise	#00CED1
+Dark Vanilla	#D1BEA8
+Dark Violet	#9400D3
+Dark Yellow	#9B870C
+Dartmouth Green	#00703C
+Davy's Grey	#555555
+Debian Red	#D70A53
+Deep Amethyst	#9C8AA4
+Deep Aquamarine	#40826D
+Deep Carmine	#A9203E
+Deep Carmine Pink	#EF3038
+Deep Carrot Orange	#E9692C
+Deep Cerise	#DA3287
+Deep Champagne	#FAD6A5
+Deep Chestnut	#B94E48
+Deep Coffee	#704241
+Deep Fuchsia	#C154C1
+Deep Green	#056608
+Deep Green-Cyan Turquoise	#0E7C61
+Deep Jungle Green	#004B49
+Deep Koamaru	#333366
+Deep Lemon	#F5C71A
+Deep Lilac	#9955BB
+Deep Magenta	#CC00CC
+Deep Maroon	#820000
+Deep Mauve	#D473D4
+Deep Moss Green	#355E3B
+Deep Peach	#FFCBA4
+Deep Pink	#FF1493
+Deep Puce	#A95C68
+Deep Red	#850101
+Deep Ruby	#843F5B
+Deep Saffron	#FF9933
+Deep Sky Blue	#00BFFF
+Deep Space Sparkle	#4A646C
+Deep Spring Bud	#556B2F
+Deep Taupe	#7E5E60
+Deep Tuscan Red	#66424D
+Deep Violet	#330066
+Deer	#BA8759
+Denim	#1560BD
+Denim Blue	#2243B6
+Desaturated Cyan	#669999
+Desert	#C19A6B
+Desert Sand	#EDC9AF
+Desire	#EA3C53
+Diamond	#B9F2FF
+Dim Gray	#696969
+Dingy Dungeon	#C53151
+Dirt	#9B7653
+Dirty Brown	#B5651E
+Dirty White	#E8E4C9
+Dodger Blue	#1E90FF
+Dodie Yellow	#FEF65B
+Dogwood Rose	#D71868
+Dollar Bill	#85BB65
+Dolphin Gray	#828E84
+Donkey Brown	#664C28
+Drab	#967117
+Duke Blue	#00009C
+Dust Storm	#E5CCC9
+Dutch White	#EFDFBB
+Earth Yellow	#E1A95F
+Ebony	#555D50
+Ecru	#C2B280
+Eerie Black	#1B1B1B
+Eggplant	#614051
+Eggshell	#F0EAD6
+Egyptian Blue	#1034A6
+Electric Blue	#7DF9FF
+Electric Crimson	#FF003F
+Electric Cyan	#00FFFF
+Electric Green	#00FF00
+Electric Indigo	#6F00FF
+Electric Lavender	#F4BBFF
+Electric Lime	#CCFF00
+Electric Purple	#BF00FF
+Electric Ultramarine	#3F00FF
+Electric Violet	#8F00FF
+Electric Yellow	#FFFF33
+Emerald	#50C878
+Emerald Green	#046307
+Eminence	#6C3082
+English Green	#1B4D3E
+English Lavender	#B48395
+English Red	#AB4B52
+English Vermillion	#CC474B
+English Violet	#563C5C
+Eton Blue	#96C8A2
+Eucalyptus	#44D7A8
+Fallow	#C19A6B
+Falu Red	#801818
+Fandango	#B53389
+Fandango Pink	#DE5285
+Fashion Fuchsia	#F400A1
+Fawn	#E5AA70
+Feldgrau	#4D5D53
+Feldspar	#FDD5B1
+Fern Green	#4F7942
+Ferrari Red	#FF2800
+Field Drab	#6C541E
+Fiery Rose	#FF5470
+Firebrick	#B22222
+Fire Engine Red	#CE2029
+Fire Opal	#E95C4B
+Flame	#E25822
+Flamingo Pink	#FC8EAC
+Flattery	#6B4423
+Flavescent	#F7E98E
+Flax	#EEDC82
+Flesh	#FFE9D1
+Flirt	#A2006D
+Floral White	#FFFAF0
+Fluorescent Orange	#FFBF00
+Fluorescent Pink	#FF1493
+Fluorescent Yellow	#CCFF00
+Folly	#FF004F
+Forest Green (Traditional)	#014421
+Forest Green (Web)	#228B22
+French Beige	#A67B5B
+French Bistre	#856D4D
+French Blue	#0072BB
+French Fuchsia	#FD3F92
+French Lilac	#86608E
+French Lime	#9EFD38
+French Mauve	#D473D4
+French Pink	#FD6C9E
+French Plum	#811453
+French Puce	#4E1609
+French Raspberry	#C72C48
+French Rose	#F64A8A
+French Sky Blue	#77B5FE
+French Violet	#8806CE
+French Wine	#AC1E44
+Fresh Air	#A6E7FF
+Frostbite	#E936A7
+Fuchsia	#FF00FF
+Fuchsia (Crayola)	#C154C1
+Fuchsia Pink	#FF77FF
+Fuchsia Purple	#CC397B
+Fuchsia Rose	#C74375
+Fulvous	#E48400
+Fuzzy Wuzzy	#CC6666
